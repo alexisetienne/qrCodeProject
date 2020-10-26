@@ -29,10 +29,7 @@ module.exports = options => ({
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         // Preprocess our own .css files
