@@ -12,6 +12,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PropTypes from 'prop-types';
+import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import {
@@ -58,6 +59,9 @@ const styles = () => ({
   logo: {
     width: '30%',
   },
+  logoHome: {
+    width: '20%',
+  },
   header: {
     display: 'flex',
     justifyContent: 'center',
@@ -85,6 +89,30 @@ const styles = () => ({
     alignItems: 'center',
   },
   heading: {
+    fontFamily: 'Montserrat, sans-serif',
+    fontSize: '18px',
+    color: '#ffffff',
+  },
+  homeFont: {
+    fontSize: '12px',
+    fontFamily: 'montserrat, sans-serif',
+  },
+  home: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'no-wrap',
+    alignItems: 'center',
+    margin: '15px',
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'column',
+    margin: '20px',
+    backgroundColor: '#2A2C2B',
+    padding: '10px',
+  },
+  footerFont: {
     fontFamily: 'Montserrat, sans-serif',
     fontSize: '18px',
     color: '#ffffff',
@@ -259,6 +287,51 @@ class HomePage extends React.PureComponent {
                 </Paper>
               </Grid>
             </Grid>
+            <div className={classes.home}>
+              <img
+                className={classes.logoHome}
+                src="../../img/vrai_fait_maison.png"
+                alt=""
+              />
+              <Typography align="center" className={classes.homeFont}>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                Tous nos plats sont "fait maison".
+              </Typography>
+            </div>
+            <Typography align="center" className={classes.homeFont}>
+              Règlements acceptés : CB, Espèces, Tickets Restaurants, Chèques
+              Vacances
+            </Typography>
+            <div className={classes.footer}>
+              <Typography align="center" className={classes.footerFont}>
+                Notez nous sur tripadvisor :
+              </Typography>
+              <Link
+                align="center"
+                href="https://www.tripadvisor.fr/Restaurant_Review-g2435153-d2470869-Reviews-Brasserie_Club_15-Nailloux_Haute_Garonne_Occitanie.html"
+                target="blank"
+              >
+                <img
+                  style={{ width: '20%' }}
+                  src="../../img/tripadvisor.png"
+                  alt=""
+                />
+              </Link>
+              <Typography align="center" className={classes.footerFont}>
+                Suivez nous sur Facebook:
+              </Typography>
+              <Link
+                align="center"
+                href="https://www.facebook.com/brasserieclub15/"
+                target="blank"
+              >
+                <img
+                  style={{ width: '20%' }}
+                  src="../../img/facebook.png"
+                  alt=""
+                />
+              </Link>
+            </div>
           </div>
         </MuiThemeProvider>
       </div>
