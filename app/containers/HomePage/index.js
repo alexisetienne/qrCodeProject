@@ -257,7 +257,7 @@ class HomePage extends React.PureComponent {
                       <Typography>
                         <img
                           className={classes.img}
-                          src="../../img/dessertsClub15.png"
+                          src="../../img/vinClub15.png"
                           alt=""
                         />
                       </Typography>
@@ -277,7 +277,7 @@ class HomePage extends React.PureComponent {
                       <Typography>
                         <img
                           className={classes.img}
-                          src="../../img/vinClub15.png"
+                          src="../../img/dessertsClub15.png"
                           alt=""
                         />
                       </Typography>
