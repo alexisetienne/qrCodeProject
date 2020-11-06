@@ -108,7 +108,6 @@ const styles = () => ({
   footer: {
     display: 'flex',
     flexDirection: 'column',
-    margin: '20px',
     backgroundColor: '#2A2C2B',
     padding: '10px',
   },
