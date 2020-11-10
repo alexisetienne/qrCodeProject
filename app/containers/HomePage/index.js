@@ -79,7 +79,7 @@ const styles = () => ({
   imgPelous: {
     width: '100%',
     position: 'relative',
-    opacity: 0.55,
+    opacity: 0.25,
   },
   headerBackground: {
     backgroundColor: '#2A2C2B',
