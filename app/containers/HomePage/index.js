@@ -183,13 +183,188 @@ const styles = () => ({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  finalQ: {
+    fontFamily: 'montserrat, sans-serif',
+    fontSize: '16px',
+    fontWeight: 'bold',
+  },
 });
 
 class HomePage extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      questionsChildren: [
+        {
+          question: 'Le kangourou appartient à la famille des ...',
+          options: [
+            {
+              label: 'martiens',
+              isCorrect: false,
+            },
+            {
+              label: 'marsupilamis',
+              isCorrect: false,
+            },
+            {
+              label: 'marsupiaux',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question:
+            "La transformation de la chenille en papillon s'appelle ...",
+          options: [
+            {
+              label: 'la métamorphose',
+              isCorrect: true,
+            },
+            {
+              label: 'la migration',
+              isCorrect: false,
+            },
+            {
+              label: 'la mésaventure',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question:
+            "Un animal qui se nourrit uniquement d'herbe, de foin et de feuilles s'appelle un ...",
+          options: [
+            {
+              label: 'un herboriste',
+              isCorrect: false,
+            },
+            {
+              label: 'un herbier',
+              isCorrect: false,
+            },
+            {
+              label: 'un herbivore',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question: 'Les scientifiques qui étudient les insectes sont des ...',
+          options: [
+            {
+              label: 'anthropologistes',
+              isCorrect: false,
+            },
+            {
+              label: 'ophtalmologistes',
+              isCorrect: false,
+            },
+            {
+              label: 'entomologistes',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question: 'Combien de consonnes y a-t-il dans le mot "chien" ?',
+          options: [
+            {
+              label: '2',
+              isCorrect: true,
+            },
+            {
+              label: '3',
+              isCorrect: false,
+            },
+            {
+              label: '4',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question: 'sélectionne la bonne orthographe  ',
+          options: [
+            {
+              label: 'un poulet',
+              isCorrect: true,
+            },
+            {
+              label: 'un pouler',
+              isCorrect: false,
+            },
+            {
+              label: 'un poolé',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question: 'Pour manger ce fruit, tu dois casser sa coque.',
+          options: [
+            {
+              label: 'la banane',
+              isCorrect: false,
+            },
+            {
+              label: 'le citron',
+              isCorrect: false,
+            },
+            {
+              label: 'la noisette',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question: 'Comment est appelé le petit du lapin ?',
+          options: [
+            {
+              label: 'le lapereau',
+              isCorrect: true,
+            },
+            {
+              label: 'le lapinou',
+              isCorrect: false,
+            },
+            {
+              label: 'le lapin crétin',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question:
+            'Dans lequel de ces pays la vache est elle un animal sacré ?',
+          options: [
+            {
+              label: 'au Japon',
+              isCorrect: false,
+            },
+            {
+              label: 'au Brésil',
+              isCorrect: false,
+            },
+            {
+              label: 'en Inde',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question: 'La chèvre fait partie de la famille des Équidés.',
+          options: [
+            {
+              label: 'vrai',
+              isCorrect: false,
+            },
+            {
+              label: 'faux',
+              isCorrect: true,
+            },
+          ],
+        },
+      ],
       questions: [
         {
           question: 'Combien de sélections nationales possède Fabien Pelous ?',
@@ -319,13 +494,97 @@ class HomePage extends React.PureComponent {
             },
           ],
         },
+        {
+          question: 'Quel est la pointure de Fabien Pelous ?',
+          options: [
+            {
+              label: '46',
+              isCorrect: false,
+            },
+            {
+              label: '47',
+              isCorrect: true,
+            },
+            {
+              label: '48',
+              isCorrect: false,
+            },
+            {
+              label: '49',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question: 'Combien de tournoi des six nations a joué Fabien Pelous ?',
+          options: [
+            {
+              label: '7',
+              isCorrect: false,
+            },
+            {
+              label: '9',
+              isCorrect: false,
+            },
+            {
+              label: '10',
+              isCorrect: false,
+            },
+            {
+              label: '11',
+              isCorrect: true,
+            },
+          ],
+        },
+        {
+          question: 'En quel année a était fondé le Stade Toulousain ?',
+          options: [
+            {
+              label: '1897',
+              isCorrect: false,
+            },
+            {
+              label: '1907',
+              isCorrect: true,
+            },
+            {
+              label: '1917',
+              isCorrect: false,
+            },
+            {
+              label: '1927',
+              isCorrect: false,
+            },
+          ],
+        },
+        {
+          question: "Combien de coupe d'europe a gagné le Stade Toulousain ?",
+          options: [
+            {
+              label: '2',
+              isCorrect: false,
+            },
+            {
+              label: '3',
+              isCorrect: false,
+            },
+            {
+              label: '4',
+              isCorrect: true,
+            },
+            {
+              label: '5',
+              isCorrect: false,
+            },
+          ],
+        },
       ],
       open: false,
+      openChildren: false,
       currentQuestion: 1,
       currentAnswer: {},
-      error: null,
       points: 0,
-      timer: 10,
+      timer: 15,
     };
   }
 
@@ -335,10 +594,11 @@ class HomePage extends React.PureComponent {
         this.showNextQuestion();
       } else {
         this.setState({
+          // eslint-disable-next-line react/no-access-state-in-setstate
           timer: this.state.timer - 1,
         });
       }
-    }, 1000);
+    }, 1500);
   };
 
   showNextQuestion = () => {
@@ -352,7 +612,7 @@ class HomePage extends React.PureComponent {
       {
         currentQuestion: currentQuestion + 1,
         points: currentAnswer && currentAnswer.isCorrect ? points + 1 : points,
-        timer: 10,
+        timer: 15,
       },
       () => {
         // Se for a ultima questao, finaliza o quiz
@@ -373,6 +633,7 @@ class HomePage extends React.PureComponent {
     const { currentAnswer } = this.state;
     const { classes } = this.props;
     return options.map((option, index) => (
+      // eslint-disable-next-line react/no-array-index-key
       <div className={classes.buttonBox} key={index}>
         <Button
           variant="outlined"
@@ -411,6 +672,27 @@ class HomePage extends React.PureComponent {
       ));
   };
 
+  renderQuestionsChildren = () => {
+    const { questionsChildren, currentQuestion } = this.state;
+    const { classes } = this.props;
+    return questionsChildren
+      .slice(currentQuestion - 1, currentQuestion)
+      .map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <div key={index}>
+          <Typography align="center" className={classes.questionFont}>
+            {item.question}
+          </Typography>
+          {this.state.timer > 0 && (
+            <Typography align="center" className={classes.timer}>
+              {this.state.timer}
+            </Typography>
+          )}
+          {this.renderOptions(item.options)}
+        </div>
+      ));
+  };
+
   closeModal = () => {
     this.setState({ open: false });
     window.location.reload();
@@ -421,6 +703,16 @@ class HomePage extends React.PureComponent {
     this.setState({ open: true });
   };
 
+  closeModalChildren = () => {
+    this.setState({ openChildren: false });
+    window.location.reload();
+  };
+
+  openModalChildren = () => {
+    this.fireTimer();
+    this.setState({ openChildren: true });
+  };
+
   renderScore = () => {
     const { classes } = this.props;
     return (
@@ -428,17 +720,149 @@ class HomePage extends React.PureComponent {
         <Typography className={classes.scoreFont}>
           Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
         </Typography>
-        <Typography className={classes.footerFont}>
+        <Typography align="center" className={classes.finalQ}>
           Combien de sélections nationales possède Fabien Pelous ?
         </Typography>
-        <Typography className={classes.footerFont}>
+        <Typography align="center" className={classes.footerFont}>
           Bonne réponse : 118.
         </Typography>
-        <Typography className={classes.footerFont}>
+        <Typography align="center" className={classes.finalQ}>
           Dans quel club Fabien Pelous a-t-il terminé sa carrière ?
         </Typography>
-        <Typography className={classes.footerFont}>
+        <Typography align="center" className={classes.footerFont}>
           Bonne réponse : Stade Toulousain.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Dans quel club à était formé Fabien Pelous ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : Saverdun.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Combien compte de sélections Fabien Pelous en équipe de france ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 118.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Quelle est la distance, en kilomètres, entre le village des marques de
+          Nailloux et la place du Capitole de Toulouse ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 36 km.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Dans combien de clubs a joué Fabien Pelous ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 4 clubs.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Quel est la pointure de Fabien Pelous ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 47.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Combien de tournoi des six nations a joué Fabien Pelous ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 11.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          En quel année a était fondé le Stade Toulousain ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 1907.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Combien de coupe d'europe a gagné le Stade Toulousain ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Bonne réponse : 4 coupe d'Europe.
+        </Typography>
+        <Button variant="contained" color="secondary" onClick={this.closeModal}>
+          Quitter le quiz
+        </Button>
+      </div>
+    );
+  };
+
+  renderScoreChildren = () => {
+    const { classes } = this.props;
+    return (
+      <div>
+        <Typography className={classes.scoreFont}>
+          Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Le kangourou appartient à la famille des ...
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : marsupiaux.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          La transformation de la chenille en papillon s'appelle ...
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : la métamorphose.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Un animal qui se nourrit uniquement d'herbe, de foin et de feuilles
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          s'appelle un ...
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : un herbivore.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Les scientifiques qui étudient les insectes sont des ...
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : entomologistes.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Combien de consonnes y a-t-il dans le mot "chien" ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : 2.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          sélectionne la bonne orthographe
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : poulet.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Pour manger ce fruit, tu dois casser sa coque.
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : la noisette.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Comment est appelé le petit du lapin ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : le lapereau.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          Dans lequel de ces pays la vache est elle un animal sacré ?
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          Bonne réponse : en Inde.
+        </Typography>
+        <Typography align="center" className={classes.finalQ}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          La chèvre fait partie de la famille des Équidés.
+        </Typography>
+        <Typography align="center" className={classes.footerFont}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Bonne réponse : faux.
         </Typography>
         <Button variant="contained" color="secondary" onClick={this.closeModal}>
           Quitter le quiz
@@ -663,9 +1087,44 @@ class HomePage extends React.PureComponent {
               <Typography align="center" className={classes.footerFont}>
                 Pour patientez :
               </Typography>
-              <Button className={classes.gameButton} variant="contained">
+              <Button
+                onClick={this.openModalChildren}
+                className={classes.gameButton}
+                variant="contained"
+              >
                 Quizz enfant
               </Button>
+              <Modal
+                open={this.state.openChildren}
+                onClose={this.closeModalChildren}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+              >
+                <Paper className={classes.paperQuiz}>
+                  {!isFinished
+                    ? this.renderQuestionsChildren()
+                    : this.renderScoreChildren()}
+                  {!isFinished && (
+                    <div className={classes.quizButton}>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        className={classes.buttonBack}
+                        onClick={this.closeModal}
+                      >
+                        Quitter le quiz
+                      </Button>
+                      <Button
+                        variant="contained"
+                        className={classes.buttonNext}
+                        onClick={this.showNextQuestion}
+                      >
+                        Valider ma réponse
+                      </Button>
+                    </div>
+                  )}
+                </Paper>
+              </Modal>
               <Button
                 onClick={this.openModal}
                 className={classes.gameButton}
