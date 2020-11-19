@@ -207,6 +207,9 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  modal: {
+    overflow: 'scroll',
+  },
 });
 
 class HomePage extends React.PureComponent {
@@ -1120,6 +1123,7 @@ class HomePage extends React.PureComponent {
                 Quizz enfant
               </Button>
               <Modal
+                className={classes.modal}
                 open={this.state.openChildren}
                 onClose={this.closeModalChildren}
                 aria-labelledby="simple-modal-title"
@@ -1158,6 +1162,7 @@ class HomePage extends React.PureComponent {
                 Quizz adulte
               </Button>
               <Modal
+                className={classes.modal}
                 open={this.state.open}
                 onClose={this.closeModal}
                 aria-labelledby="simple-modal-title"
