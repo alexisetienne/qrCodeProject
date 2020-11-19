@@ -125,9 +125,6 @@ const styles = theme => ({
     color: '#7e3c82',
     fontFamily: 'montserrat, sans-serif',
     fontSize: '16px',
-    '&:focus': {
-      color: '#ffffff',
-    },
   },
   footerFontLoad: {
     color: '#ffffff',
@@ -144,10 +141,9 @@ const styles = theme => ({
   buttonQuizz: {
     margin: '10px',
     padding: '5px',
-    color: '#7e3c82',
     '&:focus': {
-      backgroundColor: '#7e3c82',
-      color: '#ffffff',
+      borderColor: '#7e3c82',
+      borderWidth: '5px',
     },
   },
   buttonBox: {
