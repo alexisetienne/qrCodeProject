@@ -38,7 +38,7 @@ const themeLabel = createMuiTheme({
   },
 });
 
-const styles = () => ({
+const styles = theme => ({
   containerAccordion: {
     overflowX: 'hidden',
     overflowY: 'hidden',
@@ -77,11 +77,19 @@ const styles = () => ({
     position: 'absolute',
     margin: '15px',
     top: '25%',
+    [theme.breakpoints.up('sm')]: {
+      top: '86%',
+      left: '50%',
+    },
   },
   imgPelous: {
     width: '100%',
     position: 'relative',
     opacity: 0.2,
+    [theme.breakpoints.up('sm')]: {
+      width: '55%',
+      opacity: 0.7,
+    },
   },
   headerBackground: {
     backgroundColor: '#2A2C2B',
@@ -114,8 +122,17 @@ const styles = () => ({
     padding: '10px',
   },
   footerFont: {
+    color: '#7e3c82',
     fontFamily: 'montserrat, sans-serif',
-    fontSize: '14px',
+    fontSize: '16px',
+    '&:focus': {
+      color: '#ffffff',
+    },
+  },
+  footerFontLoad: {
+    color: '#ffffff',
+    fontFamily: 'montserrat, sans-serif',
+    fontSize: '16px',
   },
   gameButton: {
     fontFamily: 'montserrat, sans-serif',
@@ -187,6 +204,12 @@ const styles = () => ({
     fontFamily: 'montserrat, sans-serif',
     fontSize: '16px',
     fontWeight: 'bold',
+  },
+  scoreBox: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 });
 
@@ -716,7 +739,7 @@ class HomePage extends React.PureComponent {
   renderScore = () => {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.scoreBox}>
         <Typography className={classes.scoreFont}>
           Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
         </Typography>
@@ -793,7 +816,7 @@ class HomePage extends React.PureComponent {
   renderScoreChildren = () => {
     const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.scoreBox}>
         <Typography className={classes.scoreFont}>
           Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
         </Typography>
@@ -813,6 +836,7 @@ class HomePage extends React.PureComponent {
         <Typography align="center" className={classes.finalQ}>
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Un animal qui se nourrit uniquement d'herbe, de foin et de feuilles
+          <br />
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           s'appelle un ...
         </Typography>
@@ -864,7 +888,12 @@ class HomePage extends React.PureComponent {
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           Bonne réponse : faux.
         </Typography>
-        <Button variant="contained" color="secondary" onClick={this.closeModal}>
+        <Button
+          align="center"
+          variant="contained"
+          color="secondary"
+          onClick={this.closeModalChildren}
+        >
           Quitter le quiz
         </Button>
       </div>
@@ -906,7 +935,7 @@ class HomePage extends React.PureComponent {
                   de vous amener découvrir de nouveaux territoires. Pain BAO
                   (pain de riz asiatique) adapté à notre terroir, chaleur
                   exotique du coco des îles tropicales, découvrez ces nouvelles
-                  saveurs propice à la rêverie d’un voyage culinaire. Bon
+                  saveurs propices à la rêverie d’un voyage culinaire. Bon
                   appétit.
                   <br /> Fabien Pelous
                 </Typography>
@@ -924,7 +953,7 @@ class HomePage extends React.PureComponent {
                       id="panel1a-header"
                     >
                       <Typography className={classes.heading}>
-                        Nos aperitifs
+                        Nos boissons
                       </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -1056,7 +1085,7 @@ class HomePage extends React.PureComponent {
               Vacances
             </Typography>
             <div className={classes.footer}>
-              <Typography align="center" className={classes.footerFont}>
+              <Typography align="center" className={classes.footerFontLoad}>
                 Notez nous sur tripadvisor :
               </Typography>
               <Link
@@ -1070,7 +1099,7 @@ class HomePage extends React.PureComponent {
                   alt=""
                 />
               </Link>
-              <Typography align="center" className={classes.footerFont}>
+              <Typography align="center" className={classes.footerFontLoad}>
                 Suivez nous sur Facebook:
               </Typography>
               <Link
@@ -1084,7 +1113,7 @@ class HomePage extends React.PureComponent {
                   alt=""
                 />
               </Link>
-              <Typography align="center" className={classes.footerFont}>
+              <Typography align="center" className={classes.footerFontLoad}>
                 Pour patientez :
               </Typography>
               <Button
