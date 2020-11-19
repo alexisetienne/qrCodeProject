@@ -209,6 +209,7 @@ const styles = theme => ({
   },
   modal: {
     overflow: 'scroll',
+    margin: '5px',
   },
 });
 
@@ -740,7 +741,7 @@ class HomePage extends React.PureComponent {
     return (
       <div className={classes.scoreBox}>
         <Typography className={classes.scoreFont}>
-          Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
+          Vous avez obtenu {this.state.points} bonnes réponse sur 10 questions.
         </Typography>
         <Typography align="center" className={classes.finalQ}>
           Combien de sélections nationales possède Fabien Pelous ?
@@ -817,7 +818,7 @@ class HomePage extends React.PureComponent {
     return (
       <div className={classes.scoreBox}>
         <Typography className={classes.scoreFont}>
-          Vous avez obtenu {this.state.points} bonne réponse sur 10 questions.
+          Vous avez obtenu {this.state.points} bonnes réponse sur 10 questions.
         </Typography>
         <Typography align="center" className={classes.finalQ}>
           Le kangourou appartient à la famille des ...
