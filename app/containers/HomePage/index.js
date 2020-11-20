@@ -156,6 +156,12 @@ const styles = theme => ({
     flexDirection: 'column',
     padding: '15px',
   },
+  paperQuizModal: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    margin: '15px',
+  },
   timer: {
     backgroundColor: '#7e3c82',
     fontFamily: 'montserrat, sans-serif',
@@ -190,6 +196,15 @@ const styles = theme => ({
     margin: '10px',
     color: '#ffffff',
     backgroundColor: '#EE4266',
+  },
+  buttonBackModal: {
+    fontFamily: 'montserrat, sans-serif',
+    fontSize: '14px',
+    borderRadius: '50px',
+    fontWeight: 'bold',
+    margin: '10px',
+    color: '#ffffff',
+    backgroundColor: '#7e3c82',
   },
   quizButton: {
     display: 'flex',
@@ -603,6 +618,7 @@ class HomePage extends React.PureComponent {
         },
       ],
       open: false,
+      openBonus: true,
       openChildren: false,
       currentQuestion: 1,
       currentAnswer: {},
@@ -719,6 +735,10 @@ class HomePage extends React.PureComponent {
   closeModal = () => {
     this.setState({ open: false });
     window.location.reload();
+  };
+
+  closeModalBonus = () => {
+    this.setState({ openBonus: false });
   };
 
   openModal = () => {
@@ -910,6 +930,32 @@ class HomePage extends React.PureComponent {
           <div>
             <div className={classes.header}>
               <div className={classes.headerBackground}>
+                <Modal
+                  className={classes.modal}
+                  open={this.state.openBonus}
+                  onClose={this.closeModalBonus}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
+                >
+                  <Paper className={classes.paperQuizModal}>
+                    <Typography>
+                      <img
+                        className={classes.img}
+                        src="../../img/reduction.png"
+                        alt=""
+                      />
+                    </Typography>
+                    <div className={classes.quizButton}>
+                      <Button
+                        variant="contained"
+                        className={classes.buttonBackModal}
+                        onClick={this.closeModalBonus}
+                      >
+                        Accueil
+                      </Button>
+                    </div>
+                  </Paper>
+                </Modal>
                 <img
                   className={classes.logo}
                   src="../../img/logo15.png"
