@@ -1112,6 +1112,26 @@ class HomePage extends React.PureComponent {
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
+                  <Accordion>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography className={classes.heading}>
+                        La boutique
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        <img
+                          className={classes.img}
+                          src="../../img/shopClub15.png"
+                          alt=""
+                        />
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
                 </Paper>
               </Grid>
             </Grid>
