@@ -1,0 +1,27 @@
+[
+  {
+    "id": "0",
+    "menu": "Nos boissons",
+    "img": "../../img/boissonsClub15.png"
+  },
+  {
+    "id": "1",
+    "menu": "Nos bières",
+    "img": "../../img/bieresClub15.png"
+  },
+  {
+    "id": "2",
+    "menu": "Nos entrées",
+    "img": "../../img/entréesClub15.png"
+  },
+  {
+    "id": "3",
+    "menu": "Nos Plats",
+    "img": "../../img/platsClub15.png"
+  },
+  {
+    "id": "4",
+    "menu": "Nos vins",
+    "img": "../../img/vinClub15.png"
+  }
+]

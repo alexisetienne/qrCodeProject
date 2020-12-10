@@ -6,11 +6,7 @@
  */
 
 import React from 'react';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
@@ -22,6 +18,8 @@ import {
   MuiThemeProvider,
   withStyles,
 } from '@material-ui/core/styles';
+import menus from './menu.json';
+import Menu from '../../components/Menu';
 
 const themeLabel = createMuiTheme({
   overrides: {
@@ -992,146 +990,9 @@ class HomePage extends React.PureComponent {
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <Paper className={classes.paper}>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos boissons
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/boissonsClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos bières
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/bieresClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel2a-content"
-                      id="panel2a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos entrées
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/entréesClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel3a-content"
-                      id="panel3a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos Plats
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/platsClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos vins
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/vinClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        Nos desserts
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/dessertsClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography className={classes.heading}>
-                        La boutique
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        <img
-                          className={classes.img}
-                          src="../../img/shopClub15.png"
-                          alt=""
-                        />
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
+                  {menus.map(menu => (
+                    <Menu menu={menu.menu} img={menu.img} />
+                  ))}
                 </Paper>
               </Grid>
             </Grid>
