@@ -1,6 +1,12 @@
-[
-  {
-    "id": "test",
-    "defaultMessage": "testfr"
-  }
-]
+{
+  "qrCodeProject.containers.Homepage.title": " Bienvenue à",
+  "qrCodeProject.containers.Homepage.title2": " [Le nom de votre restaurant]",
+  "qrCodeProject.containers.Homepage.description": "Bonjour à tous,",
+  "qrCodeProject.containers.Homepage.description2": " Dans un cadre traditionnel et une ambiance familiale, notre\n                  restaurant vous propose une cuisine régionale que vous pourrez\n                  déguster dans la grande salle ou sous la belle terrasse\n                  ombragée entourée de magnifiques arcades. Le restaurant chez\n                  moi, vous accueille tout au long de la journée du petit\n                  déjeuner au dîner. Les groupes sont les bienvenus, le\n                  restaurant ayant une capacité d'accueil jusqu'à 50 couverts.\n                  La terrasse couverte peut accueillir jusqu'à 75 personnes.\n                  Profitez de vos vacances pour déguster de délicieux plats\n                  régionaux en terrasse !",
+  "qrCodeProject.containers.Homepage.homeCook": "  Tous nos plats sont \"fait maison\".",
+  "qrCodeProject.containers.Homepage.payment.title": " Règlements acceptés :",
+  "qrCodeProject.containers.Homepage.payment.creditCard": "Cartes de crédit",
+  "qrCodeProject.containers.Homepage.payment.cash": "Éspèces",
+  "qrCodeProject.containers.Homepage.opinion": "Notez nous sur tripadvisor :",
+  "qrCodeProject.containers.Homepage.follow": "Suivez nous sur Facebook:"
+}
